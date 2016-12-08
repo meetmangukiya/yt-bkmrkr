@@ -90,4 +90,13 @@ chrome.browserAction.onClicked.addListener(function(tab){
                       https://www.youtube.com");
         chrome.notifications.create(notification.invalid)
     }
+
+    url = "http://yt.fierybit.com/?"
+
+    for( var obj in bookmarks){
+        reg = /https:\/\/www\.youtube\.com\/watch\?v=(.+)/i;
+        url = url + "id=" + bookmarks[obj][0].match(reg)[1] + "&";
+    }
+
+    console.log(url);
 });
